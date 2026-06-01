@@ -76,6 +76,7 @@ nav.scr{background:rgba(244,239,228,.86);backdrop-filter:blur(14px);border-botto
 /* ---------- shell ---------- */
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,56px);position:relative}
 section{padding:clamp(96px,15vh,180px) 0}
+@media(max-width:760px){section{padding:64px 0}.lead+.lead{margin-top:14px}}
 .kick{display:inline-flex;align-items:center;gap:12px;font-size:13px;font-weight:600;letter-spacing:2.5px;
   text-transform:uppercase;color:var(--brass-2);margin-bottom:30px}
 .kick::before{content:"";width:32px;height:1.5px;background:var(--brass)}
@@ -139,6 +140,7 @@ h2 .br{color:var(--brass-2)}
 /* ---------- about ---------- */
 .about{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(48px,7vw,96px);align-items:center}
 @media(max-width:880px){.about{grid-template-columns:1fr;gap:48px}}
+@media(max-width:760px){.about{gap:30px}.about-quote .big{font-size:24px}.about-quote .by{margin-top:16px}}
 .about-quote{border-left:2px solid var(--brass);padding:8px 0 8px 36px}
 .about-quote .big{font-family:'Fraunces',serif;font-weight:600;font-style:italic;font-size:clamp(26px,3.4vw,40px);line-height:1.25;letter-spacing:-.5px;color:var(--ink)}
 .about-quote .by{margin-top:24px;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft)}
