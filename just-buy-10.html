@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>JUST BUY $10 — Stop Overthinking</title>
+<meta name="description" content="No stress. No fake utility. No long story. Just pure BSC meme energy. JUST BUY $10."/>
+<meta property="og:title" content="JUST BUY $10"/>
+<meta property="og:description" content="Stop overthinking. Just buy $10. Pure BSC meme energy."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --paper:#f4efe4;
+  --paper-2:#ece5d6;
+  --paper-3:#e3dbc9;
+  --ink:#1c1813;
+  --ink-soft:#5d5546;
+  --emerald:#0e5d3d;
+  --emerald-2:#0a4a31;
+  --brass:#b58324;
+  --brass-2:#9a6e18;
+  --line:rgba(28,24,19,.12);
+  --line-2:rgba(28,24,19,.22);
+  --shadow:0 26px 70px -30px rgba(28,24,19,.35);
+  --maxw:1120px;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--paper);color:var(--ink);overflow-x:hidden;
+  font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:17px;line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(60% 50% at 50% -5%,rgba(181,131,36,.08),transparent 60%);
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+::selection{background:var(--emerald);color:var(--paper)}
+.serif{font-family:'Fraunces',Georgia,serif}
+
+/* paper grain */
+.grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E")}
+
+#prog{position:fixed;top:0;left:0;height:2px;width:0;z-index:200;background:var(--brass)}
+
+/* ---------- nav ---------- */
+nav{position:fixed;inset:0 0 auto 0;z-index:150;display:flex;align-items:center;justify-content:space-between;
+  padding:22px clamp(20px,5vw,56px);transition:.4s var(--ease)}
+nav.scr{background:rgba(244,239,228,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding-top:16px;padding-bottom:16px}
+.logo{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;font-weight:600;font-size:19px;letter-spacing:-.2px}
+.logo .seal{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--brass);display:grid;place-items:center;
+  font-size:11px;font-weight:700;color:var(--brass-2);font-family:'Fraunces',serif}
+.nlinks{display:flex;gap:34px;font-size:15px;font-weight:500}
+.nlinks a{color:var(--ink-soft);transition:color .25s}
+.nlinks a:hover{color:var(--ink)}
+@media(max-width:920px){.nlinks{display:none}}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;cursor:pointer;
+  font-weight:600;font-size:15px;padding:14px 26px;border:1.5px solid transparent;
+  transition:transform .25s var(--ease),background .25s,color .25s,box-shadow .25s,border-color .25s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn.solid{background:var(--ink);color:var(--paper);box-shadow:0 14px 30px -16px rgba(28,24,19,.7)}
+.btn.solid:hover{background:var(--emerald)}
+.btn.brass{background:var(--brass);color:#26190a;box-shadow:0 14px 30px -16px rgba(181,131,36,.8)}
+.btn.brass:hover{background:var(--brass-2);color:var(--paper)}
+.btn.line{background:transparent;color:var(--ink);border-color:var(--line-2)}
+.btn.line:hover{border-color:var(--ink);background:rgba(28,24,19,.04)}
+.btn.sm{padding:11px 20px;font-size:14px}
+.btn svg{width:17px;height:17px}
+
+/* ---------- shell ---------- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,56px);position:relative}
+section{padding:clamp(96px,15vh,180px) 0}
+.kick{display:inline-flex;align-items:center;gap:12px;font-size:13px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--brass-2);margin-bottom:30px}
+.kick::before{content:"";width:32px;height:1.5px;background:var(--brass)}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(34px,5.4vw,68px);line-height:1.02;letter-spacing:-1.5px;margin-bottom:26px}
+h2 em{font-style:italic;font-weight:500;color:var(--emerald)}
+h2 .br{color:var(--brass-2)}
+.lead{font-size:clamp(17px,1.6vw,20px);color:var(--ink-soft);max-width:640px}
+.lead + .lead{margin-top:20px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+[data-d="1"]{transition-delay:.08s}[data-d="2"]{transition-delay:.16s}[data-d="3"]{transition-delay:.24s}
+[data-d="4"]{transition-delay:.32s}[data-d="5"]{transition-delay:.4s}[data-d="6"]{transition-delay:.48s}
+
+/* ---------- hero ---------- */
+.hero{min-height:100svh;display:flex;align-items:center;padding-top:104px;padding-bottom:36px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,6vw,80px);align-items:center;width:100%}
+@media(max-width:940px){.hero{min-height:auto;padding-top:124px;padding-bottom:80px}.hero-grid{grid-template-columns:1fr;gap:52px}}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:24px;display:flex;align-items:center;gap:14px}
+.eyebrow .pin{width:8px;height:8px;border-radius:50%;background:var(--emerald)}
+.hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(54px,10vw,124px);line-height:.92;letter-spacing:-2.5px}
+.hero h1 .a{display:block;color:var(--ink)}
+.hero h1 .b{display:block}
+.hero h1 .b .buy{color:var(--emerald)}
+.hero h1 .b .ten{font-style:italic;font-weight:500;color:var(--brass-2)}
+.hero p.sub{font-size:clamp(17px,1.9vw,21px);color:var(--ink-soft);max-width:460px;margin:28px 0 34px;line-height:1.6}
+.hero-cta{display:flex;flex-wrap:wrap;gap:13px;align-items:center}
+.soc{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--line-2);transition:.25s var(--ease)}
+.soc:hover{border-color:var(--ink);transform:translateY(-3px);background:var(--ink)}
+.soc:hover svg{fill:var(--paper)}
+.soc svg{width:19px;height:19px;fill:var(--ink);transition:fill .25s}
+/* contract chip in hero */
+.ca-chip{display:inline-flex;align-items:center;gap:14px;margin-top:34px;padding:9px 9px 9px 20px;
+  border:1px solid var(--line-2);border-radius:999px;background:var(--paper-2);max-width:100%;flex-wrap:wrap}
+.ca-chip .lbl{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft)}
+.ca-chip .addr{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--emerald);word-break:break-all}
+.ca-chip .ca-copy{border:none;background:var(--ink);color:var(--paper);font-family:'Hanken Grotesk',sans-serif;font-weight:600;
+  font-size:13px;padding:9px 18px;border-radius:999px;cursor:pointer;transition:background .25s}
+.ca-chip .ca-copy:hover{background:var(--emerald)}
+.ca-chip .ca-copy.copied{background:var(--brass);color:#26190a}
+
+/* coin mascot */
+.coin-stage{position:relative;display:grid;place-items:center;min-height:380px}
+.coin-stage .label{position:absolute;bottom:0;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--ink-soft)}
+.coin{width:300px;max-width:72vw;animation:floaty 6s ease-in-out infinite;filter:drop-shadow(0 30px 50px -20px rgba(181,131,36,.55))}
+@keyframes floaty{50%{transform:translateY(-16px)}}
+.coin .ridges{transform-origin:center;animation:rot 40s linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+.coin .shine{animation:shine 5s ease-in-out infinite}
+@keyframes shine{0%,100%{opacity:.0}45%{opacity:.0}55%{opacity:.55}}
+
+/* ---------- marquee ---------- */
+.marq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:26px 0;background:var(--paper-2)}
+.mtrack{display:flex;gap:54px;white-space:nowrap;width:max-content;animation:slide 32s linear infinite;
+  font-family:'Fraunces',serif;font-weight:500;font-size:clamp(20px,2.6vw,30px);font-style:italic;color:var(--ink)}
+.mtrack span{display:inline-flex;align-items:center;gap:54px}
+.mtrack span::after{content:"\2022";color:var(--brass);font-style:normal}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- about ---------- */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(48px,7vw,96px);align-items:center}
+@media(max-width:880px){.about{grid-template-columns:1fr;gap:48px}}
+.about-quote{border-left:2px solid var(--brass);padding:8px 0 8px 36px}
+.about-quote .big{font-family:'Fraunces',serif;font-weight:600;font-style:italic;font-size:clamp(26px,3.4vw,40px);line-height:1.25;letter-spacing:-.5px;color:var(--ink)}
+.about-quote .by{margin-top:24px;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft)}
+
+/* ---------- why ---------- */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.5vw,32px);margin-top:64px}
+@media(max-width:860px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.why-grid{grid-template-columns:1fr}}
+.feat{padding:40px 36px;border:1px solid var(--line);border-radius:18px;background:var(--paper-2);transition:.35s var(--ease)}
+.feat:hover{transform:translateY(-6px);border-color:var(--line-2);box-shadow:var(--shadow)}
+.feat .ic{width:40px;height:40px;color:var(--emerald);margin-bottom:24px}
+.feat .ic svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.feat h4{font-family:'Fraunces',serif;font-weight:600;font-size:22px;letter-spacing:-.3px;margin-bottom:10px}
+.feat p{color:var(--ink-soft);font-size:15.5px;line-height:1.6}
+.feat .no{font-family:'Fraunces',serif;font-size:13px;color:var(--brass-2);letter-spacing:1px;display:block;margin-bottom:18px}
+
+/* ---------- shorts ---------- */
+.shorts-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.rail{display:flex;gap:clamp(20px,2.4vw,32px);margin-top:64px;overflow-x:auto;padding:6px 4px 36px;
+  scroll-snap-type:x mandatory;-ms-overflow-style:none;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.phone{flex:0 0 clamp(216px,25vw,262px);scroll-snap-align:center;position:relative;border-radius:34px;padding:9px;
+  background:var(--ink);box-shadow:var(--shadow);transition:transform .35s var(--ease),box-shadow .35s;transform-style:preserve-3d}
+.phone:hover{box-shadow:0 40px 80px -34px rgba(28,24,19,.6)}
+.phone .notch{position:absolute;top:18px;left:50%;transform:translateX(-50%);width:64px;height:6px;border-radius:6px;background:#000;z-index:6}
+.screen{position:relative;aspect-ratio:9/16;border-radius:27px;overflow:hidden;background:#13110d}
+.tag{position:absolute;top:14px;left:14px;z-index:7;font-size:9px;font-weight:700;letter-spacing:1.5px;color:var(--ink);
+  background:var(--brass);padding:4px 9px;border-radius:999px}
+.cap{position:absolute;left:0;right:0;bottom:0;z-index:7;text-align:center;
+  font-family:'Fraunces',serif;font-weight:500;font-style:italic;font-size:14px;line-height:1.3;color:var(--paper);
+  padding:44px 16px 16px;background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,.45) 55%,transparent);
+  text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.scene{position:absolute;inset:0;overflow:hidden;color:var(--paper)}
+.ctr{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.bignum{font-family:'Fraunces',serif;font-weight:800;font-size:64px;color:var(--brass);text-shadow:0 0 30px rgba(181,131,36,.4);animation:floaty 3.2s ease-in-out infinite}
+.scoin svg{width:96px;height:96px;animation:floaty 3.2s ease-in-out infinite}
+.s2 svg.ln{position:absolute;inset:24px 16px 70px;width:auto;overflow:visible}
+.s2 .flash{position:absolute;inset:0;display:grid;place-items:center;background:var(--brass);color:#1c1306;
+  font-family:'Fraunces',serif;font-weight:800;font-size:30px;line-height:.9;text-align:center;opacity:0;animation:flash 4.6s infinite}
+@keyframes flash{0%,68%{opacity:0}72%,95%{opacity:1}100%{opacity:0}}
+.drop{position:absolute;font-family:'Fraunces',serif;font-weight:700;font-size:17px;color:var(--brass);animation:dr linear infinite}
+@keyframes dr{0%{transform:translateY(-30px);opacity:0}12%{opacity:1}100%{transform:translateY(440px);opacity:.15}}
+.s4 .slide{position:absolute;inset:18px 14px 60px;border:1px solid rgba(244,239,228,.18);border-radius:12px;padding:16px}
+.s4 h5{font-family:'Fraunces',serif;font-size:12px;color:var(--brass);margin-bottom:16px;letter-spacing:.5px}
+.s4 .row{display:flex;gap:8px;align-items:center;font-size:11px;color:rgba(244,239,228,.5);margin-bottom:12px}
+.s4 .row .m{width:12px;height:12px;flex:none}
+.s4 .row.hit{color:var(--paper);font-weight:600;animation:floaty 2.4s ease-in-out infinite}
+.s4 .row svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2}
+.s5 svg.up{position:absolute;inset:0;width:100%;height:100%}
+.s5 .moveline{stroke-dasharray:6 8;animation:dash 1.6s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-28}}
+.s6{padding:16px 12px 64px;display:flex;flex-direction:column;justify-content:flex-end;gap:9px}
+.bub{align-self:flex-start;max-width:82%;background:rgba(244,239,228,.1);border-radius:13px;padding:8px 12px;font-size:11px;opacity:0;animation:pop .5s forwards;color:rgba(244,239,228,.85)}
+.bub.me{align-self:flex-end;background:var(--brass);color:#1c1306;font-weight:600}
+.bub:nth-child(1){animation-delay:.3s}.bub:nth-child(2){animation-delay:1s}.bub:nth-child(3){animation-delay:1.7s}
+.bub:nth-child(4){animation-delay:2.4s}.bub:nth-child(5){animation-delay:3.1s}
+@keyframes pop{0%{opacity:0;transform:translateY(8px)}100%{opacity:1;transform:none}}
+.hint{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft);display:inline-flex;align-items:center;gap:10px}
+.hint svg{width:22px;height:14px;stroke:var(--brass);fill:none;stroke-width:1.6;animation:nudge 1.5s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateX(6px)}}
+
+/* ---------- signal ---------- */
+.signal{text-align:center}
+.signal h2{font-size:clamp(40px,8vw,108px)}
+.radar{position:relative;height:150px;margin:36px auto 28px;max-width:560px}
+.wave{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border:1.5px solid var(--brass);border-radius:50%;opacity:0;animation:wv 3.4s ease-out infinite}
+.wave:nth-child(2){animation-delay:1.13s}.wave:nth-child(3){animation-delay:2.26s}
+@keyframes wv{0%{width:30px;height:30px;opacity:.7}100%{width:480px;height:480px;opacity:0}}
+.signal-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;background:var(--emerald);z-index:3}
+.big-sig{font-family:'Fraunces',serif;font-weight:600;font-style:italic;font-size:clamp(28px,6vw,56px);color:var(--emerald);letter-spacing:-1px;margin-top:8px}
+
+/* ---------- buy ---------- */
+.steps{margin-top:56px;border-top:1px solid var(--line)}
+.step{display:grid;grid-template-columns:90px 1fr auto;gap:30px;align-items:baseline;padding:34px 4px;border-bottom:1px solid var(--line);transition:.3s var(--ease)}
+.step:hover{background:var(--paper-2);padding-left:18px;padding-right:18px}
+.step .no{font-family:'Fraunces',serif;font-weight:600;font-size:40px;color:var(--brass-2);line-height:1}
+.step .tx h4{font-family:'Fraunces',serif;font-weight:600;font-size:22px;margin-bottom:6px;letter-spacing:-.3px}
+.step .tx p{color:var(--ink-soft);font-size:15.5px;max-width:520px}
+.step .mark{color:var(--emerald);font-size:13px;letter-spacing:2px;text-transform:uppercase}
+@media(max-width:640px){.step{grid-template-columns:60px 1fr;gap:18px}.step .mark{display:none}.step .no{font-size:30px}}
+
+/* ---------- token info ---------- */
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+@media(max-width:760px){.info{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.info{grid-template-columns:1fr}}
+.icard{padding:34px 32px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-2);transition:background .3s}
+.icard:hover{background:var(--paper-3)}
+.icard .k{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft)}
+.icard .v{font-family:'Fraunces',serif;font-weight:600;font-size:24px;margin-top:12px;letter-spacing:-.4px}
+.icard .v.em{color:var(--emerald)}.icard .v.soon{color:var(--brass-2);font-style:italic;font-weight:500;font-size:20px}
+.ca-box{margin-top:24px;border:1px dashed var(--line-2);border-radius:16px;padding:22px 26px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:space-between;background:var(--paper-2)}
+.ca-box .lbl{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft)}
+.ca-box .addr{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--emerald);word-break:break-all;margin-top:6px}
+#copyBtn.copied{background:var(--emerald);color:var(--paper);border-color:transparent}
+
+/* ---------- gallery ---------- */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2vw,26px);margin-top:56px}
+@media(max-width:860px){.gal{grid-template-columns:repeat(2,1fr)}}
+.meme{aspect-ratio:1;border:1px solid var(--line);border-radius:18px;padding:30px 26px;position:relative;
+  display:flex;flex-direction:column;justify-content:space-between;background:var(--paper-2);transition:.4s var(--ease);overflow:hidden}
+.meme:hover{transform:translateY(-8px) rotate(-1.4deg);box-shadow:var(--shadow);border-color:var(--line-2)}
+.meme:nth-child(2n):hover{transform:translateY(-8px) rotate(1.4deg)}
+.meme .ic{width:34px;height:34px;color:var(--brass-2)}
+.meme .ic svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.meme .t{font-family:'Fraunces',serif;font-weight:600;font-size:18px;line-height:1.25;letter-spacing:-.3px}
+
+/* ---------- community ---------- */
+.comm{text-align:center}
+.comm .lead{margin:0 auto 44px}
+.cbtns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:72px 0 52px;background:var(--paper-2)}
+.ftop{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:center;margin-bottom:44px}
+.fsoc{display:flex;gap:12px}
+.disc{font-size:14px;line-height:1.8;color:var(--ink-soft);max-width:760px;border-top:1px solid var(--line);padding-top:30px}
+.disc b{color:var(--ink);font-weight:600}
+.cpy{margin-top:18px;font-size:13px;color:var(--ink-soft);letter-spacing:.5px}
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+<div id="prog"></div>
+
+<nav id="nav">
+  <a href="#top" class="logo"><span class="seal serif">$10</span> Just Buy $10</a>
+  <div class="nlinks">
+    <a href="#about">The Meme</a><a href="#why">Why $10</a><a href="#shorts">Shorts</a>
+    <a href="#buy">How To Buy</a><a href="#info">Token</a><a href="#community">Community</a>
+  </div>
+  <a class="btn solid sm" href="https://t.me/just_buy_10_dollars" target="_blank" rel="noopener">Buy Now</a>
+</nav>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="pin"></span> A meme token on BNB Chain</div>
+      <h1>
+        <span class="a">Just</span>
+        <span class="b"><span class="buy">Buy</span> <span class="ten serif">$10</span></span>
+      </h1>
+      <p class="sub">No stress. No fake utility. No long story. Just pure BSC meme energy.</p>
+      <div class="hero-cta">
+        <a class="btn solid" href="https://t.me/just_buy_10_dollars" target="_blank" rel="noopener">Buy Now</a>
+        <a class="btn brass" href="#info">View Chart</a>
+        <a class="soc" href="https://t.me/just_buy_10_dollars" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg></a>
+        <a class="soc" href="https://x.com/just_ten_dollar" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93 6.06-6.93zm-1.29 19.5h2.04L6.48 3.24H4.29L17.61 20.65z"/></svg></a>
+      </div>
+      <div class="ca-chip">
+        <span class="lbl">Contract</span>
+        <span class="addr">Coming soon</span>
+        <button class="ca-copy js-copy" data-label="Copy CA">Copy CA</button>
+      </div>
+    </div>
+
+    <div class="coin-stage">
+      <svg class="coin" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" aria-label="Ten dollar coin emblem">
+        <defs>
+          <radialGradient id="gold" cx="38%" cy="32%" r="75%">
+            <stop offset="0%" stop-color="#f2dca0"/><stop offset="46%" stop-color="#d4a93f"/>
+            <stop offset="78%" stop-color="#b58324"/><stop offset="100%" stop-color="#8a6014"/>
+          </radialGradient>
+          <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#e7c878"/><stop offset="100%" stop-color="#9a6e18"/>
+          </linearGradient>
+          <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="rgba(255,255,255,0)"/><stop offset="50%" stop-color="rgba(255,255,255,.85)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+          </linearGradient>
+          <clipPath id="disc"><circle cx="150" cy="150" r="116"/></clipPath>
+        </defs>
+        <!-- reeded edge ticks -->
+        <g class="ridges" stroke="url(#rim)" stroke-width="3">
+          <!-- generated ticks via dasharray ring -->
+          <circle cx="150" cy="150" r="136" fill="none" stroke="url(#rim)" stroke-width="10" stroke-dasharray="2 6.5"/>
+        </g>
+        <circle cx="150" cy="150" r="130" fill="url(#rim)"/>
+        <circle cx="150" cy="150" r="120" fill="url(#gold)"/>
+        <circle cx="150" cy="150" r="120" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1"/>
+        <circle cx="150" cy="150" r="104" fill="none" stroke="rgba(138,96,20,.5)" stroke-width="2"/>
+        <circle cx="150" cy="150" r="100" fill="none" stroke="rgba(138,96,20,.3)" stroke-width="1" stroke-dasharray="1 6"/>
+        <!-- engraved $10 -->
+        <text x="150" y="178" text-anchor="middle" font-family="Fraunces, serif" font-weight="800" font-size="86" fill="#7a5410">$10</text>
+        <text x="150" y="214" text-anchor="middle" font-family="Hanken Grotesk, sans-serif" font-weight="700" font-size="13" letter-spacing="4" fill="rgba(122,84,16,.8)">JUST BUY</text>
+        <text x="150" y="104" text-anchor="middle" font-family="Hanken Grotesk, sans-serif" font-weight="600" font-size="11" letter-spacing="3" fill="rgba(122,84,16,.7)">BNB CHAIN</text>
+        <!-- shine sweep -->
+        <g clip-path="url(#disc)"><rect class="shine" x="-60" y="-40" width="80" height="420" transform="rotate(24 150 150)" fill="url(#sweep)"/></g>
+      </svg>
+      <span class="label">Legal tender of the group chat</span>
+    </div>
+  </div>
+</section>
+
+<div class="marq">
+  <div class="mtrack">
+    <span>Just buy</span><span>No stress</span><span>Just vibes</span><span>No roadmap</span><span>Stop overthinking</span>
+    <span>Just buy</span><span>No stress</span><span>Just vibes</span><span>No roadmap</span><span>Stop overthinking</span>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap about">
+    <div class="rv">
+      <span class="kick">About the meme</span>
+      <h2>The meme is <em>simple.</em></h2>
+      <p class="lead">Everyone is searching for the next big narrative. This one keeps it simple. Just buy $10, join the meme, and enjoy the chaos.</p>
+      <p class="lead">No overthinking. No boring whitepaper. No fake utility. Just one clear message moving across BNB Chain.</p>
+    </div>
+    <div class="about-quote rv" data-d="2">
+      <div class="big">"The entire strategy fits in a single text message."</div>
+      <div class="by">— Just Buy $10</div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <span class="kick rv">Why $10?</span>
+    <h2 class="rv" data-d="1">Because <span class="br">ten dollars</span> just makes sense.</h2>
+    <p class="lead rv" data-d="2">Six honest reasons. No asterisks.</p>
+    <div class="why-grid">
+      <div class="feat rv" data-d="1"><span class="no serif">01</span><div class="ic"><svg viewBox="0 0 24 24"><path d="M7 12a4 4 0 0 1 4-4h2"/><path d="M17 12a4 4 0 0 1-4 4h-2"/><path d="M9 12h6"/></svg></div><h4>Easy to join</h4><p>Ten dollars. No spreadsheet, no PhD. It is already sitting in your other wallet doing nothing.</p></div>
+      <div class="feat rv" data-d="2"><span class="no serif">02</span><div class="ic"><svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.2 11l7.6-4M8.2 13l7.6 4"/></svg></div><h4>Easy to share</h4><p>Three words fit in any group chat. The meme spreads itself.</p></div>
+      <div class="feat rv" data-d="3"><span class="no serif">03</span><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></div><h4>Easy to understand</h4><p>No tokenomics deck. No five-act backstory. Just buy $10.</p></div>
+      <div class="feat rv" data-d="1"><span class="no serif">04</span><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5a4 4 0 0 0 7 0"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></div><h4>Made for meme lovers</h4><p>Built by people who get the joke, for people who get the joke.</p></div>
+      <div class="feat rv" data-d="2"><span class="no serif">05</span><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg></div><h4>No long story</h4><p>The story is the title. That is the whole thing.</p></div>
+      <div class="feat rv" data-d="3"><span class="no serif">06</span><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/></svg></div><h4>Just vibes</h4><p>Pure internet energy. Zero promises. Maximum fun.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="shorts">
+  <div class="wrap">
+    <div class="shorts-head">
+      <div class="rv">
+        <span class="kick">Shorts &amp; clips</span>
+        <h2>The <em>$10</em> video wall.</h2>
+      </div>
+      <span class="hint rv" data-d="2">Scroll the rail <svg viewBox="0 0 24 14"><path d="M2 7h18M15 2l5 5-5 5"/></svg></span>
+    </div>
+    <div class="rail" id="rail">
+      <div class="phone"><div class="notch"></div><div class="screen"><span class="tag">REEL 01</span>
+        <div class="scene ctr"><div><div class="scoin"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#b58324" stroke-width="1.4"/><circle cx="12" cy="12" r="6.5" stroke="#b58324" stroke-width="1" stroke-dasharray="1 3"/><text x="12" y="15.5" text-anchor="middle" font-family="Fraunces,serif" font-weight="800" font-size="7" fill="#e7c878">$10</text></svg></div></div></div>
+        <div class="cap">Just ten dollars. That's the pitch.</div></div></div>
+
+      <div class="phone"><div class="notch"></div><div class="screen"><span class="tag">REEL 02</span>
+        <div class="scene s2">
+          <svg class="ln" viewBox="0 0 100 100" preserveAspectRatio="none"><polyline points="4,84 18,42 30,64 44,28 58,74 72,34 96,58" fill="none" stroke="#d4a93f" stroke-width="1.6"/></svg>
+          <div class="flash">Just<br>buy<br>$10</div></div>
+        <div class="cap">When you finally stop overthinking.</div></div></div>
+
+      <div class="phone"><div class="notch"></div><div class="screen"><span class="tag">REEL 03</span>
+        <div class="scene">
+          <span class="drop" style="left:14%;animation-duration:2.4s">$10</span><span class="drop" style="left:34%;animation-duration:2.9s;animation-delay:.4s">$10</span>
+          <span class="drop" style="left:54%;animation-duration:2.1s;animation-delay:.9s">$10</span><span class="drop" style="left:72%;animation-duration:3.1s;animation-delay:.2s">$10</span>
+          <span class="drop" style="left:88%;animation-duration:2.5s;animation-delay:.7s">$10</span></div>
+        <div class="cap">When the group chat turns green.</div></div></div>
+
+      <div class="phone"><div class="notch"></div><div class="screen"><span class="tag">REEL 04</span>
+        <div class="scene s4"><div class="slide"><h5>UTILITY DECK</h5>
+          <div class="row"><svg class="m" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg> Roadmap</div>
+          <div class="row"><svg class="m" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg> AI metaverse layer</div>
+          <div class="row"><svg class="m" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg> DAO governance</div>
+          <div class="row hit"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Buy $10</div></div></div>
+        <div class="cap">Explaining the entire utility.</div></div></div>
+
+      <div class="phone"><div class="notch"></div><div class="screen"><span class="tag">REEL 05</span>
+        <div class="scene s5">
+          <svg class="up" viewBox="0 0 100 160" preserveAspectRatio="none">
+            <path class="moveline" d="M12 140 L40 96 L60 116 L88 30" fill="none" stroke="#d4a93f" stroke-width="2.4"/>
+            <path d="M76 30 L88 30 L88 42" fill="none" stroke="#d4a93f" stroke-width="2.4"/>
+          </svg></div>
+        <div class="cap">No roadmap. Just up.</div></div></div>
+
+      <div class="phone"><div class="notch"></div><div class="screen"><span class="tag">REEL 06</span>
+        <div class="scene s6">
+          <div class="bub">should I ape in?</div><div class="bub me">already bought $10</div>
+          <div class="bub">we are so back</div><div class="bub me">just $10, relax</div><div class="bub">aping now</div></div>
+        <div class="cap">The chart, once everyone gets it.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="signal" class="signal">
+  <div class="wrap">
+    <span class="kick rv" style="justify-content:center">Meme signal</span>
+    <h2 class="rv" data-d="1">The signal is <em>clear.</em></h2>
+    <div class="radar rv" data-d="2"><div class="signal-core"></div><div class="wave"></div><div class="wave"></div><div class="wave"></div></div>
+    <p class="lead rv" data-d="3" style="margin:0 auto">No whitepaper. No boring promises. No fake revolution. Just one message broadcasting across BNB Chain:</p>
+    <div class="big-sig rv" data-d="4">Just buy $10.</div>
+  </div>
+</section>
+
+<section id="buy">
+  <div class="wrap">
+    <span class="kick rv">How to buy</span>
+    <h2 class="rv" data-d="1">Five steps. <span class="br">Zero</span> stress.</h2>
+    <div class="steps rv" data-d="2">
+      <div class="step"><div class="no serif">01</div><div class="tx"><h4>Get BNB</h4><p>Grab some BNB on BNB Chain from any exchange or on-ramp.</p></div><div class="mark">Wallet</div></div>
+      <div class="step"><div class="no serif">02</div><div class="tx"><h4>Open PancakeSwap</h4><p>Connect your wallet to PancakeSwap.</p></div><div class="mark">Connect</div></div>
+      <div class="step"><div class="no serif">03</div><div class="tx"><h4>Paste the contract</h4><p>Drop in the official contract address (coming soon).</p></div><div class="mark">Address</div></div>
+      <div class="step"><div class="no serif">04</div><div class="tx"><h4>Swap</h4><p>Swap BNB for Just Buy $10. Yes, ten dollars is plenty.</p></div><div class="mark">Trade</div></div>
+      <div class="step"><div class="no serif">05</div><div class="tx"><h4>Join up</h4><p>Hop in Telegram and follow on X for the chaos.</p></div><div class="mark">Community</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="info">
+  <div class="wrap">
+    <span class="kick rv">Token info</span>
+    <h2 class="rv" data-d="1">The boring <em>details.</em></h2>
+    <div class="info rv" data-d="2">
+      <div class="icard"><div class="k">Name</div><div class="v em">Just Buy $10</div></div>
+      <div class="icard"><div class="k">Network</div><div class="v">BNB Chain</div></div>
+      <div class="icard"><div class="k">Ticker</div><div class="v soon">Coming soon</div></div>
+      <div class="icard"><div class="k">Tax</div><div class="v">2% Buy / 3% Sell</div></div>
+      <div class="icard"><div class="k">Total Supply</div><div class="v">1,000,000,000</div></div>
+      <div class="icard"><div class="k">Liquidity</div><div class="v soon">Coming soon</div></div>
+    </div>
+    <div class="ca-box rv" data-d="3">
+      <div><div class="lbl">Contract Address</div><div class="addr">Coming soon</div></div>
+      <button class="btn line sm js-copy" data-label="Copy address">Copy address</button>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <span class="kick rv">Meme gallery</span>
+    <h2 class="rv" data-d="1">Certified <span class="br">$10</span> material.</h2>
+    <div class="gal">
+      <div class="meme rv" data-d="1"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 12v4M12 8v.01"/></svg></div><div class="t">Overthought it for three hours.</div></div>
+      <div class="meme rv" data-d="2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 16l5-6 4 4 7-9"/></svg></div><div class="t">Green candle gang.</div></div>
+      <div class="meme rv" data-d="3"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div><div class="t">Bought the $10. No regrets.</div></div>
+      <div class="meme rv" data-d="4"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 14l3-3 2 2 4-5"/></svg></div><div class="t">Charts? I do not read those.</div></div>
+      <div class="meme rv" data-d="1"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5h.01M14.5 9.5h.01M8.5 14a4 4 0 0 0 7 0"/></svg></div><div class="t">"But what's the utility?"</div></div>
+      <div class="meme rv" data-d="2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 4v10M12 4l-4 4M12 4l4 4M6 20h12"/></svg></div><div class="t">No roadmap, just up.</div></div>
+      <div class="meme rv" data-d="3"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M9.5 9.5h4a1.5 1.5 0 0 1 0 3h-3a1.5 1.5 0 0 0 0 3h4"/></svg></div><div class="t">It was literally ten dollars.</div></div>
+      <div class="meme rv" data-d="4"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 0 0-4 4 4 4 0 0 0-1 7 4 4 0 0 0 5 4 4 4 0 0 0 5-4 4 4 0 0 0-1-7 4 4 0 0 0-4-4z"/></svg></div><div class="t">Galaxy brain: buy $10.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="community" class="comm">
+  <div class="wrap">
+    <span class="kick rv" style="justify-content:center">Community</span>
+    <h2 class="rv" data-d="1">Join the <em>$10</em> movement.</h2>
+    <p class="lead rv" data-d="2">This is not a serious project pretending to save the world. It is pure meme energy. Join the community, share the joke, and let the internet do what it does best.</p>
+    <div class="cbtns rv" data-d="3">
+      <a class="btn solid" href="https://t.me/just_buy_10_dollars" target="_blank" rel="noopener">Telegram</a>
+      <a class="btn line" href="https://x.com/just_ten_dollar" target="_blank" rel="noopener">X / Twitter</a>
+      <a class="btn line" href="#info">DexScreener</a>
+      <a class="btn brass" href="https://t.me/just_buy_10_dollars" target="_blank" rel="noopener">Buy Now</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ftop">
+      <a href="#top" class="logo"><span class="seal serif">$10</span> Just Buy $10</a>
+      <div class="fsoc">
+        <a class="soc" href="https://t.me/just_buy_10_dollars" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg></a>
+        <a class="soc" href="https://x.com/just_ten_dollar" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.46l8.6-9.83L0 1.15h7.6l5.24 6.93 6.06-6.93zm-1.29 19.5h2.04L6.48 3.24H4.29L17.61 20.65z"/></svg></a>
+      </div>
+    </div>
+    <p class="disc"><b>Just Buy $10</b> is a meme token created purely for entertainment and community fun. No financial advice. No guarantees. No promises of profit or returns. Cryptocurrency is volatile and risky — only spend what you can afford to lose, and always do your own research.</p>
+    <p class="cpy">© 2026 Just Buy $10 · A meme on BNB Chain</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav'),prog=document.getElementById('prog'),h=document.documentElement;
+  function s(){var sc=h.scrollTop/(h.scrollHeight-h.clientHeight);prog.style.width=(sc*100)+'%';nav.classList.toggle('scr',h.scrollTop>30);}
+  addEventListener('scroll',s,{passive:true});s();
+})();
+(function(){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+})();
+document.querySelectorAll('.phone').forEach(function(p){
+  p.addEventListener('mousemove',function(e){var r=p.getBoundingClientRect();
+    var x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    p.style.transform='perspective(1000px) rotateY('+(x*12)+'deg) rotateX('+(-y*12)+'deg) translateY(-6px)';});
+  p.addEventListener('mouseleave',function(){p.style.transform='';});
+});
+/* ===== set this ONE line on launch and both Copy buttons go live ===== */
+var CA = ""; // e.g. "0xABC123...". Leave empty until contract is ready.
+(function(){
+  var live = CA && CA.indexOf('0x')===0;
+  document.querySelectorAll('.addr').forEach(function(el){ el.textContent = live ? CA : 'Coming soon'; });
+  document.querySelectorAll('.js-copy').forEach(function(btn){
+    var label = btn.getAttribute('data-label') || 'Copy';
+    btn.addEventListener('click',function(){
+      if(live){
+        if(navigator.clipboard) navigator.clipboard.writeText(CA);
+        btn.textContent='Copied'; btn.classList.add('copied');
+        setTimeout(function(){btn.textContent=label; btn.classList.remove('copied');},1500);
+      } else {
+        btn.textContent='Not live yet';
+        setTimeout(function(){btn.textContent=label;},1400);
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
