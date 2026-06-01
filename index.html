@@ -229,6 +229,8 @@ h2 .br{color:var(--brass-2)}
 .icard .k{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft)}
 .icard .v{font-family:'Fraunces',serif;font-weight:600;font-size:24px;margin-top:12px;letter-spacing:-.4px}
 .icard .v.em{color:var(--emerald)}.icard .v.soon{color:var(--brass-2);font-style:italic;font-weight:500;font-size:20px}
+.tax-note{margin-top:22px;font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--ink-soft);display:flex;align-items:center;gap:12px}
+.tax-note::before{content:"";width:24px;height:1.5px;background:var(--brass);flex:none}
 .ca-box{margin-top:24px;border:1px dashed var(--line-2);border-radius:16px;padding:22px 26px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:space-between;background:var(--paper-2)}
 .ca-box .lbl{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft)}
 .ca-box .addr{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--emerald);word-break:break-all;margin-top:6px}
@@ -454,10 +456,11 @@ footer{border-top:1px solid var(--line);padding:72px 0 52px;background:var(--pap
       <div class="icard"><div class="k">Name</div><div class="v em">Just Buy $10</div></div>
       <div class="icard"><div class="k">Network</div><div class="v">BNB Chain</div></div>
       <div class="icard"><div class="k">Ticker</div><div class="v soon">Coming soon</div></div>
-      <div class="icard"><div class="k">Tax</div><div class="v">2% Buy / 3% Sell</div></div>
+      <div class="icard"><div class="k">Buy Tax</div><div class="v">2%</div></div>
+      <div class="icard"><div class="k">Sell Tax</div><div class="v">3%</div></div>
       <div class="icard"><div class="k">Total Supply</div><div class="v">1,000,000,000</div></div>
-      <div class="icard"><div class="k">Liquidity</div><div class="v soon">Coming soon</div></div>
     </div>
+    <p class="tax-note rv" data-d="3">All buy and sell tax goes straight back into liquidity.</p>
     <div class="ca-box rv" data-d="3">
       <div><div class="lbl">Contract Address</div><div class="addr">Coming soon</div></div>
       <button class="btn line sm js-copy" data-label="Copy address">Copy address</button>
