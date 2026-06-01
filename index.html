@@ -157,12 +157,14 @@ h2 .br{color:var(--brass-2)}
 
 /* ---------- shorts ---------- */
 .shorts-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
-.rail{display:flex;gap:clamp(20px,2.4vw,32px);margin-top:64px;overflow-x:auto;padding:6px 4px 36px;
-  scroll-snap-type:x mandatory;-ms-overflow-style:none;scrollbar-width:none}
+.rail{display:flex;gap:clamp(16px,2.4vw,32px);margin-top:64px;overflow-x:auto;padding:6px 4px 36px;
+  scroll-snap-type:x proximity;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;
+  -ms-overflow-style:none;scrollbar-width:none}
 .rail::-webkit-scrollbar{display:none}
-.phone{flex:0 0 clamp(216px,25vw,262px);scroll-snap-align:center;position:relative;border-radius:34px;padding:9px;
-  background:var(--ink);box-shadow:var(--shadow);transition:transform .35s var(--ease),box-shadow .35s;transform-style:preserve-3d}
+.phone{flex:0 0 clamp(200px,25vw,262px);scroll-snap-align:center;position:relative;border-radius:34px;padding:9px;
+  background:var(--ink);box-shadow:var(--shadow);transition:transform .35s var(--ease),box-shadow .35s}
 .phone:hover{box-shadow:0 40px 80px -34px rgba(28,24,19,.6)}
+@media(max-width:640px){.rail{margin-top:48px;gap:14px;scroll-padding-left:20px}.phone{flex-basis:78vw;max-width:300px}}
 .phone .notch{position:absolute;top:18px;left:50%;transform:translateX(-50%);width:64px;height:6px;border-radius:6px;background:#000;z-index:6}
 .screen{position:relative;aspect-ratio:9/16;border-radius:27px;overflow:hidden;background:#13110d}
 .tag{position:absolute;top:14px;left:14px;z-index:7;font-size:9px;font-weight:700;letter-spacing:1.5px;color:var(--ink);
@@ -236,6 +238,27 @@ h2 .br{color:var(--brass-2)}
 .ca-box .addr{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--emerald);word-break:break-all;margin-top:6px}
 #copyBtn.copied{background:var(--emerald);color:var(--paper);border-color:transparent}
 
+/* ---------- tokenomics ---------- */
+.tok{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,6vw,80px);align-items:center}
+@media(max-width:880px){.tok{grid-template-columns:1fr;gap:48px}}
+.tok-dial{position:relative;width:min(320px,80vw);aspect-ratio:1;margin:0 auto}
+.tok-dial svg{width:100%;height:100%;transform:rotate(-90deg)}
+.tok-dial .ring-bg{fill:none;stroke:var(--paper-3);stroke-width:14}
+.tok-dial .seg{fill:none;stroke-width:14;stroke-linecap:butt;transition:stroke-dashoffset 1.4s var(--ease)}
+.tok-dial .center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.tok-dial .center .big{font-family:'Fraunces',serif;font-weight:800;font-size:clamp(34px,6vw,52px);line-height:1;color:var(--ink)}
+.tok-dial .center .sub{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft);margin-top:8px}
+.tok-list{display:flex;flex-direction:column;gap:4px}
+.tok-row{display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;padding:24px 4px;border-bottom:1px solid var(--line)}
+.tok-row:last-child{border-bottom:none}
+.tok-row .dot{width:14px;height:14px;border-radius:4px}
+.tok-row .lab{display:flex;flex-direction:column;gap:3px}
+.tok-row .lab .n{font-family:'Fraunces',serif;font-weight:600;font-size:20px;letter-spacing:-.3px}
+.tok-row .lab .d{font-size:14px;color:var(--ink-soft)}
+.tok-row .amt{text-align:right}
+.tok-row .amt .pct{font-family:'Fraunces',serif;font-weight:700;font-size:26px;line-height:1}
+.tok-row .amt .qty{font-size:13px;color:var(--ink-soft);margin-top:2px}
+
 /* ---------- gallery ---------- */
 .gal{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2vw,26px);margin-top:56px}
 @media(max-width:860px){.gal{grid-template-columns:repeat(2,1fr)}}
@@ -259,6 +282,17 @@ footer{border-top:1px solid var(--line);padding:72px 0 52px;background:var(--pap
 .disc{font-size:14px;line-height:1.8;color:var(--ink-soft);max-width:760px;border-top:1px solid var(--line);padding-top:30px}
 .disc b{color:var(--ink);font-weight:600}
 .cpy{margin-top:18px;font-size:13px;color:var(--ink-soft);letter-spacing:.5px}
+
+/* mobile performance: drop expensive repaint effects during scroll */
+@media(max-width:760px){
+  .grain{display:none}
+  nav.scr{backdrop-filter:none;background:var(--paper)}
+  .coin .ridges,.coin .shine{animation:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
@@ -270,7 +304,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 52px;background:var(--pap
   <a href="#top" class="logo"><span class="seal serif">$10</span> Just Buy $10</a>
   <div class="nlinks">
     <a href="#about">The Meme</a><a href="#why">Why $10</a><a href="#shorts">Shorts</a>
-    <a href="#buy">How To Buy</a><a href="#info">Token</a><a href="#community">Community</a>
+    <a href="#buy">How To Buy</a><a href="#info">Token</a><a href="#tokenomics">Tokenomics</a><a href="#community">Community</a>
   </div>
   <a class="btn solid sm" href="https://t.me/just_buy_10_dollars" target="_blank" rel="noopener">Buy Now</a>
 </nav>
@@ -468,6 +502,42 @@ footer{border-top:1px solid var(--line);padding:72px 0 52px;background:var(--pap
   </div>
 </section>
 
+<section id="tokenomics">
+  <div class="wrap">
+    <span class="kick rv">Tokenomics</span>
+    <h2 class="rv" data-d="1">Where the <em>billion</em> goes.</h2>
+    <p class="lead rv" data-d="2">One billion tokens. Split three ways, no hidden allocations.</p>
+    <div class="tok" style="margin-top:64px">
+      <div class="tok-dial rv" data-d="2">
+        <svg viewBox="0 0 120 120" id="tokDial">
+          <circle class="ring-bg" cx="60" cy="60" r="52"/>
+          <circle class="seg" id="seg1" cx="60" cy="60" r="52" stroke="#0e5d3d"/>
+          <circle class="seg" id="seg2" cx="60" cy="60" r="52" stroke="#b58324"/>
+          <circle class="seg" id="seg3" cx="60" cy="60" r="52" stroke="#1c1813"/>
+        </svg>
+        <div class="center"><span class="big serif">1B</span><span class="sub">Total Supply</span></div>
+      </div>
+      <div class="tok-list">
+        <div class="tok-row rv" data-d="1">
+          <span class="dot" style="background:#0e5d3d"></span>
+          <span class="lab"><span class="n">Liquidity</span><span class="d">Locked into the pool so it can actually be traded.</span></span>
+          <span class="amt"><div class="pct" style="color:#0e5d3d">50%</div><div class="qty">500,000,000</div></span>
+        </div>
+        <div class="tok-row rv" data-d="2">
+          <span class="dot" style="background:#b58324"></span>
+          <span class="lab"><span class="n">Burned</span><span class="d">Sent to the dead address. Gone forever, supply shrinks.</span></span>
+          <span class="amt"><div class="pct" style="color:#b58324">35%</div><div class="qty">350,000,000</div></span>
+        </div>
+        <div class="tok-row rv" data-d="3">
+          <span class="dot" style="background:#1c1813"></span>
+          <span class="lab"><span class="n">Development &amp; Marketing</span><span class="d">Keeping the lights on and the meme spreading.</span></span>
+          <span class="amt"><div class="pct">15%</div><div class="qty">150,000,000</div></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="gallery">
   <div class="wrap">
     <span class="kick rv">Meme gallery</span>
@@ -548,6 +618,26 @@ var CA = ""; // e.g. "0xABC123...". Leave empty until contract is ready.
     });
   });
 })();
-</script>
-</body>
-</html>
+
+/* tokenomics donut: animate segments into view */
+(function(){
+  var dial=document.getElementById('tokDial'); if(!dial)return;
+  var r=52, C=2*Math.PI*r;            // circumference
+  var data=[50,35,15];                // liquidity, burned, dev+mkt
+  var segs=[document.getElementById('seg1'),document.getElementById('seg2'),document.getElementById('seg3')];
+  segs.forEach(function(s){ s.style.strokeDasharray=C; s.style.strokeDashoffset=C; });
+  var done=false;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting && !done){ done=true; var start=0;
+      segs.forEach(function(s,i){
+        var len=C*(data[i]/100);
+        // rotate each segment to start where the previous ended
+        s.style.transform='rotate('+(start/C*360)+'deg)'; s.style.transformOrigin='60px 60px';
+        // reveal: dash of segment length, rest gap
+        s.style.strokeDasharray=len+' '+(C-len);
+        s.style.strokeDashoffset=0;
+        start+=len;
+      });
+    }});},{threshold:.4});
+  io.observe(dial);
+})();
