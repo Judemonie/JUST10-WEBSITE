@@ -164,7 +164,12 @@ h2 .br{color:var(--brass-2)}
 .phone{flex:0 0 clamp(200px,25vw,262px);scroll-snap-align:center;position:relative;border-radius:34px;padding:9px;
   background:var(--ink);box-shadow:var(--shadow);transition:transform .35s var(--ease),box-shadow .35s}
 .phone:hover{box-shadow:0 40px 80px -34px rgba(28,24,19,.6)}
-@media(max-width:640px){.rail{margin-top:48px;gap:14px;scroll-padding-left:20px}.phone{flex-basis:78vw;max-width:300px}}
+@media(max-width:640px){
+  .rail{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:40px;overflow:visible;
+    scroll-snap-type:none;padding:0}
+  .phone{flex:none;width:100%;max-width:none;scroll-snap-align:none}
+  .hint{display:none}
+}
 .phone .notch{position:absolute;top:18px;left:50%;transform:translateX(-50%);width:64px;height:6px;border-radius:6px;background:#000;z-index:6}
 .screen{position:relative;aspect-ratio:9/16;border-radius:27px;overflow:hidden;background:#13110d}
 .tag{position:absolute;top:14px;left:14px;z-index:7;font-size:9px;font-weight:700;letter-spacing:1.5px;color:var(--ink);
@@ -593,12 +598,14 @@ footer{border-top:1px solid var(--line);padding:72px 0 52px;background:var(--pap
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
   document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
 })();
+if(matchMedia('(pointer:fine)').matches){
 document.querySelectorAll('.phone').forEach(function(p){
   p.addEventListener('mousemove',function(e){var r=p.getBoundingClientRect();
     var x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
     p.style.transform='perspective(1000px) rotateY('+(x*12)+'deg) rotateX('+(-y*12)+'deg) translateY(-6px)';});
   p.addEventListener('mouseleave',function(){p.style.transform='';});
 });
+}
 /* ===== set this ONE line on launch and both Copy buttons go live ===== */
 var CA = ""; // e.g. "0xABC123...". Leave empty until contract is ready.
 (function(){
