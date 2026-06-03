@@ -9,6 +9,7 @@
 <meta property="og:description" content="Stop overthinking. Just buy $10. Pure BSC meme energy."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23b58324'/%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23f4efe4' stroke-width='1.2'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='Georgia,serif' font-weight='bold' font-size='12' fill='%23f4efe4'%3E$10%3C/text%3E%3C/svg%3E"/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 
 <style>
@@ -113,7 +114,7 @@ h2 .br{color:var(--brass-2)}
 .ca-chip{display:inline-flex;align-items:center;gap:14px;margin-top:34px;padding:9px 9px 9px 20px;
   border:1px solid var(--line-2);border-radius:999px;background:var(--paper-2);max-width:100%;flex-wrap:wrap}
 .ca-chip .lbl{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft)}
-.ca-chip .addr{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--emerald);word-break:break-all}
+.ca-chip .addr{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--emerald);white-space:nowrap}
 .ca-chip .ca-copy{border:none;background:var(--ink);color:var(--paper);font-family:'Hanken Grotesk',sans-serif;font-weight:600;
   font-size:13px;padding:9px 18px;border-radius:999px;cursor:pointer;transition:background .25s}
 .ca-chip .ca-copy:hover{background:var(--emerald)}
@@ -239,6 +240,12 @@ h2 .br{color:var(--brass-2)}
 .icard .v{font-family:'Fraunces',serif;font-weight:600;font-size:24px;margin-top:12px;letter-spacing:-.4px}
 .icard .v.em{color:var(--emerald)}.icard .v.soon{color:var(--brass-2);font-style:italic;font-weight:500;font-size:20px}
 .tax-note{margin-top:22px;font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--ink-soft);display:flex;align-items:center;gap:12px}
+.ca-actions{display:flex;gap:10px;flex-wrap:wrap}
+#addWallet.added{background:var(--emerald);color:var(--paper);border-color:transparent}
+.chart-frame{margin-top:56px;border:1px solid var(--line-2);border-radius:20px;overflow:hidden;background:var(--paper-2);box-shadow:var(--shadow)}
+.chart-frame iframe{display:block;width:100%;height:520px;border:0}
+@media(max-width:640px){.chart-frame iframe{height:420px}}
+.chart-cta{margin-top:24px;display:flex;justify-content:center}
 .tax-note::before{content:"";width:24px;height:1.5px;background:var(--brass);flex:none}
 .ca-box{margin-top:24px;border:1px dashed var(--line-2);border-radius:16px;padding:22px 26px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:space-between;background:var(--paper-2)}
 .ca-box .lbl{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft)}
@@ -504,7 +511,26 @@ footer{border-top:1px solid var(--line);padding:72px 0 52px;background:var(--pap
     <p class="tax-note rv" data-d="3">All buy and sell tax goes straight back into liquidity.</p>
     <div class="ca-box rv" data-d="3">
       <div><div class="lbl">Contract Address</div><div class="addr">Coming soon</div></div>
-      <button class="btn line sm js-copy" data-label="Copy address">Copy address</button>
+      <div class="ca-actions">
+        <button class="btn line sm js-copy" data-label="Copy address">Copy address</button>
+        <button class="btn line sm" id="addWallet">Add to wallet</button>
+        <a class="btn line sm" href="https://bscscan.com/token/0xEa65eE463cE165442323769D07c4e07fFa1B1ea9" target="_blank" rel="noopener">BscScan</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="chart">
+  <div class="wrap">
+    <span class="kick rv">Live chart</span>
+    <h2 class="rv" data-d="1">Watch it <em>move.</em></h2>
+    <p class="lead rv" data-d="2">Straight from DexScreener. If it looks empty, liquidity is still being indexed &mdash; give it a few minutes.</p>
+    <div class="chart-frame rv" data-d="2">
+      <iframe title="JUST10 live chart" loading="lazy"
+        src="https://dexscreener.com/bsc/0xEa65eE463cE165442323769D07c4e07fFa1B1ea9?embed=1&theme=light&trades=0&info=0"></iframe>
+    </div>
+    <div class="chart-cta rv" data-d="3">
+      <a class="btn brass" href="https://dexscreener.com/bsc/0xEa65eE463cE165442323769D07c4e07fFa1B1ea9" target="_blank" rel="noopener">Open full chart</a>
     </div>
   </div>
 </section>
@@ -612,7 +638,11 @@ document.querySelectorAll('.phone').forEach(function(p){
 var CA = "0xEa65eE463cE165442323769D07c4e07fFa1B1ea9"; // live contract
 (function(){
   var live = CA && CA.indexOf('0x')===0;
-  document.querySelectorAll('.addr').forEach(function(el){ el.textContent = live ? CA : 'Coming soon'; });
+  function shortCA(a){return a.slice(0,6)+'\u2026'+a.slice(-4);}
+  document.querySelectorAll('.addr').forEach(function(el){
+    if(!live){el.textContent='Coming soon';return;}
+    el.textContent = el.closest('.ca-chip') ? shortCA(CA) : CA;
+  });
   document.querySelectorAll('.js-copy').forEach(function(btn){
     var label = btn.getAttribute('data-label') || 'Copy';
     btn.addEventListener('click',function(){
@@ -626,6 +656,19 @@ var CA = "0xEa65eE463cE165442323769D07c4e07fFa1B1ea9"; // live contract
       }
     });
   });
+
+  /* add token to wallet (MetaMask / EVM wallets) */
+  var aw=document.getElementById('addWallet');
+  if(aw){ aw.addEventListener('click',function(){
+    if(!live){ aw.textContent='Not live yet'; setTimeout(function(){aw.textContent='Add to wallet';},1400); return; }
+    if(window.ethereum && window.ethereum.request){
+      window.ethereum.request({method:'wallet_watchAsset',params:{type:'ERC20',options:{address:CA,symbol:'JUST10',decimals:18}}})
+        .then(function(){aw.textContent='Added';aw.classList.add('added');setTimeout(function(){aw.textContent='Add to wallet';aw.classList.remove('added');},1800);})
+        .catch(function(){aw.textContent='Add to wallet';});
+    } else {
+      aw.textContent='No wallet found'; setTimeout(function(){aw.textContent='Add to wallet';},1600);
+    }
+  }); }
 })();
 
 /* tokenomics donut: animate segments into view */
